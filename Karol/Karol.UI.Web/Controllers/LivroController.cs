@@ -20,6 +20,8 @@ namespace Karol.UI.Web.Controllers
         {
             var aplicacao = new LivroAplicacao();
             var livro = aplicacao.ListarPorId(id);
+            if (livro == null)
+                return HttpNotFound();
             return View(livro);
         }
 
