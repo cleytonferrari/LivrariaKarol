@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Karol.Dominio.Livro>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar Novo", "Cadastrar")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Autor)
+        </th>
+        <th>Opções
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Autor)
+            </td>
+            <td>
+            @Html.ActionLink("Editar", "Editar", new { id = item.LivroId }) |
+            @Html.ActionLink("Detalhes", "Detalhes", new { id = item.LivroId }) |
+            @Html.ActionLink("Excluir", "Excluir", new { id = item.LivroId })
+            </td>
+        </tr>
+    }
+
+</table>

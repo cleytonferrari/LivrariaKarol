@@ -1,0 +1,65 @@
+﻿@model Karol.Dominio.Livro
+
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastrar</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Cadastrar Livro</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nome)
+            @Html.ValidationMessageFor(model => model.Nome)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DataDaPublicacao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DataDaPublicacao)
+            @Html.ValidationMessageFor(model => model.DataDaPublicacao)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Prefacio)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Prefacio)
+            @Html.ValidationMessageFor(model => model.Prefacio)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Autor)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Autor)
+            @Html.ValidationMessageFor(model => model.Autor)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Editora)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Editora)
+            @Html.ValidationMessageFor(model => model.Editora)
+        </div>
+
+        <p>
+            <input type="submit" value="Cadastrar" />
+            @Html.ActionLink("Cancelar", "Index")
+        </p>
+    </fieldset>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

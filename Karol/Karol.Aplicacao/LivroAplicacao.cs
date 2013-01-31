@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Karol.Dominio;
 using Karol.Repositorio;
 
@@ -54,6 +52,13 @@ namespace Karol.Aplicacao
             var strQuery = " SELECT * FROM LIVRO ";
             var retorno = contexto.ExecutaComandoComRetorno(strQuery);
             return TransformaReaderEmListaDeObjeto(retorno);
+        }
+
+        public Livro ListarPorId(int id)
+        {
+            var strQuery = " SELECT * FROM LIVRO WHERE LivroId = " + id;
+            var retorno = contexto.ExecutaComandoComRetorno(strQuery);
+            return TransformaReaderEmListaDeObjeto(retorno).FirstOrDefault();
         }
 
         private List<Livro> TransformaReaderEmListaDeObjeto(SqlDataReader reader)

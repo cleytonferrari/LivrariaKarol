@@ -1,0 +1,54 @@
+﻿@model Karol.Dominio.Livro
+
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h2>Excluir</h2>
+
+<h3>Você deseja excluir este registro?</h3>
+<fieldset>
+    <legend>Livro</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.DataDaPublicacao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataDaPublicacao)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Prefacio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Prefacio)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Autor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Autor)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Editora)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Editora)
+    </div>
+</fieldset>
+
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Excluir" /> |
+        @Html.ActionLink("Cancelar", "Index")
+    </p>
+}
