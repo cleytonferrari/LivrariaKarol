@@ -23,8 +23,9 @@ namespace Karol.Dominio
         [Display(Name = "Prefácio")]
         public string Prefacio { get; set; }
 
-        [Required]
-        public string Autor { get; set; }
+        public int AutorId { get; set; }
+
+        public Autor Autor { get; set; }
 
         [Required]
         public string Editora { get; set; }

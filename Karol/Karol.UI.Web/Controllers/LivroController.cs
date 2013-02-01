@@ -6,9 +6,7 @@ namespace Karol.UI.Web.Controllers
 {
     public class LivroController : Controller
     {
-        //
-        // GET: /Livro/
-
+       
         public ActionResult Index()
         {
             var aplicacao = new LivroAplicacao();
@@ -27,6 +25,13 @@ namespace Karol.UI.Web.Controllers
 
         public ActionResult Cadastrar()
         {
+            var aplicacao = new AutorAplicacao();
+            
+            ViewBag.ListaDeAutores = new SelectList(
+                aplicacao.ListarTodos(),
+                "AutorId",
+                "Nome"
+                );
             return View();
         }
 
@@ -49,6 +54,14 @@ namespace Karol.UI.Web.Controllers
             var livro = aplicacao.ListarPorId(id);
             if (livro == null)
                 return HttpNotFound();
+
+            var aplicacaoAutor = new AutorAplicacao();
+            ViewBag.ListaDeAutores = new SelectList(
+                aplicacaoAutor.ListarTodos(),
+                "AutorId",
+                "Nome",
+                livro.AutorId
+                );
 
             return View(livro);
         }

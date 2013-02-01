@@ -39,11 +39,11 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Autor)
+            @Html.LabelFor(model => model.AutorId)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Autor)
-            @Html.ValidationMessageFor(model => model.Autor)
+            @Html.DropDownList("AutorId",(SelectList)ViewBag.ListaDeAutores)
+            @Html.ValidationMessageFor(model => model.AutorId)
         </div>
 
         <div class="editor-label">

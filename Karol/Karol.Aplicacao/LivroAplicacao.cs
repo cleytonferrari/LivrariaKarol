@@ -14,9 +14,9 @@ namespace Karol.Aplicacao
         private void Inserir(Livro livro)
         {
             var strQuery = " ";
-            strQuery += " INSERT INTO LIVRO (Nome, DataDaPublicacao, Prefacio, Autor, Editora) ";
+            strQuery += " INSERT INTO LIVRO (Nome, DataDaPublicacao, Prefacio, AutorId, Editora) ";
             strQuery += string.Format(" VALUES ('{0}','{1}','{2}','{3}','{4}') ",
-                livro.Nome, livro.DataDaPublicacao, livro.Prefacio, livro.Autor, livro.Editora);
+                livro.Nome, livro.DataDaPublicacao, livro.Prefacio, livro.AutorId, livro.Editora);
             contexto.ExecutaComando(strQuery);
         }
 
@@ -28,7 +28,7 @@ namespace Karol.Aplicacao
             strQuery += string.Format(" DataDaPublicacao = '{0}', ", livro.DataDaPublicacao);
             strQuery += string.Format(" Prefacio = '{0}', ", livro.Prefacio);
             strQuery += string.Format(" Editora = '{0}', ", livro.Editora);
-            strQuery += string.Format(" Autor = '{0}' ", livro.Autor);
+            strQuery += string.Format(" AutorId = '{0}' ", livro.AutorId);
             strQuery += string.Format(" WHERE LivroId = {0}", livro.LivroId);
             contexto.ExecutaComando(strQuery);
         }
@@ -71,7 +71,7 @@ namespace Karol.Aplicacao
                                          LivroId = int.Parse(reader["LivroId"].ToString()),
                                          Nome = reader["Nome"].ToString(),
                                          DataDaPublicacao = DateTime.Parse(reader["DataDaPublicacao"].ToString()),
-                                         Autor = reader["Autor"].ToString(),
+                                         AutorId = int.Parse(reader["AutorId"].ToString()),
                                          Editora = reader["Editora"].ToString(),
                                          Prefacio = reader["Prefacio"].ToString()
                                      };

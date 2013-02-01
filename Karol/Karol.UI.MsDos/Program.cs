@@ -12,11 +12,11 @@ namespace Karol.UI.MsDos
     {
         static void Main(string[] args)
         {
-            var livro = new Livro();
+          /*  var livro = new Livro();
             livro.LivroId = 1;
             livro.Nome = "APRENDA C#";
             livro.DataDaPublicacao = new DateTime(2013, 1, 29);
-            livro.Autor = "Cleyton Ferrari";
+            livro.AutorId = 1;
             livro.Editora = "Faar Publicações";
             livro.Prefacio = "Aprenda a desenvolver aplicações em C#";
 
@@ -28,7 +28,7 @@ namespace Karol.UI.MsDos
             foreach (var l in lista)
             {
                 Console.Write("{0}{1}{2}{3}{4}{5}", l.LivroId, l.Autor, l.DataDaPublicacao, l.Editora, l.Nome, l.Prefacio);
-            }
+            }*/
         }
     }
 }

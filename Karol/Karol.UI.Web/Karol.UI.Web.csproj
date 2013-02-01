@@ -122,6 +122,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AutorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LivroController.cs" />
     <Compile Include="Global.asax.cs">
@@ -222,6 +223,11 @@
     <Content Include="Views\Livro\Cadastrar.cshtml" />
     <Content Include="Views\Livro\Editar.cshtml" />
     <Content Include="Views\Livro\Excluir.cshtml" />
+    <Content Include="Views\Autor\Index.cshtml" />
+    <Content Include="Views\Autor\Detalhes.cshtml" />
+    <Content Include="Views\Autor\Editar.cshtml" />
+    <Content Include="Views\Autor\Excluir.cshtml" />
+    <Content Include="Views\Autor\Cadastrar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

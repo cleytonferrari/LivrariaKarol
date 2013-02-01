@@ -15,7 +15,7 @@
             @Html.DisplayNameFor(model => model.Nome)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Autor)
+            @Html.DisplayNameFor(model => model.AutorId)
         </th>
         <th>Opções
         </th>
@@ -28,7 +28,7 @@
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Autor)
+                @Html.DisplayFor(modelItem => item.AutorId)
             </td>
             <td>
             @Html.ActionLink("Editar", "Editar", new { id = item.LivroId }) |
